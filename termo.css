@@ -1,0 +1,299 @@
+:root {
+  --noite: #14121f;
+  --noite-2: #1f1b2e;
+  --papel: #f4efe6;
+  --marfim: #fffaf0;
+  --tinta: #1a1822;
+  --lima: #c6f432;
+  --verde: #1f8a5b;
+  --amarelo: #f2b534;
+  --vermelho: #ff5a45;
+  --fonte-titulo: "Bricolage Grotesque", sans-serif;
+  --fonte-texto: "Work Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  background: var(--papel);
+  color: var(--tinta);
+  min-height: 100vh;
+}
+
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--noite);
+  color: var(--marfim);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--marfim);
+  text-decoration: none;
+}
+
+.logo-marca {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  background: var(--lima);
+  color: var(--noite);
+}
+
+.menu a {
+  color: var(--lima);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+.container-termo {
+  max-width: 600px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.painel-jogo {
+  background: var(--marfim);
+  border: 3px solid var(--tinta);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 6px 6px 0 var(--tinta);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.cabecalho-termo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--tinta);
+  padding-bottom: 0.8rem;
+}
+
+.cabecalho-termo h1 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.8rem;
+}
+
+.btn-novo {
+  padding: 0.55rem 1rem;
+  background: var(--noite);
+  color: var(--lima);
+  border: 2px solid var(--tinta);
+  border-radius: 10px;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-novo:hover {
+  background: var(--lima);
+  color: var(--noite);
+}
+
+
+.aviso {
+  width: 100%;
+  text-align: center;
+  padding: 0.7rem;
+  border-radius: 10px;
+  background: var(--noite);
+  color: var(--marfim);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.aviso.erro {
+  background: var(--vermelho);
+  color: #fff;
+}
+
+.aviso.sucesso {
+  background: var(--verde);
+  color: #fff;
+}
+
+
+.grade-termo {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 0.5rem;
+}
+
+.linha-grade {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.celula {
+  width: 58px;
+  height: 58px;
+  border: 2px solid var(--tinta);
+  border-radius: 10px;
+  background: #ffffff;
+  display: grid;
+  place-items: center;
+  font-family: var(--fonte-titulo);
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  user-select: none;
+  transition: transform 0.15s, background 0.2s, color 0.2s;
+}
+
+.celula.ativa {
+  border: 3px solid #6c4cff;
+  box-shadow: 0 0 0 2px var(--lima);
+}
+
+.celula.preenchida {
+  transform: scale(1.03);
+}
+
+
+.celula.certa,
+.teclado button.certa {
+  background: var(--verde);
+  color: #ffffff;
+  border-color: var(--tinta);
+}
+
+.celula.lugar,
+.teclado button.lugar {
+  background: var(--amarelo);
+  color: var(--tinta);
+  border-color: var(--tinta);
+}
+
+.celula.errada,
+.teclado button.errada {
+  background: var(--vermelho);
+  color: #ffffff;
+  border-color: var(--tinta);
+}
+
+
+.teclado {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 0.4rem;
+}
+
+.linha-teclado {
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.teclado button {
+  flex: 1;
+  min-width: 32px;
+  height: 46px;
+  border: 2px solid var(--tinta);
+  border-radius: 8px;
+  background: #e5dec9;
+  color: var(--tinta);
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--tinta);
+  transition: transform 0.1s;
+}
+
+.teclado button:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--tinta);
+}
+
+.teclado .tecla-larga {
+  flex: 1.4;
+}
+
+.teclado .tecla-enter {
+  flex: 1.8;
+  background: var(--lima);
+}
+
+
+.legenda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.82rem;
+  border-top: 1px solid #d4cbb8;
+  padding-top: 0.9rem;
+  width: 100%;
+}
+
+.legenda span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cor-box {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  border: 1px solid var(--tinta);
+  display: inline-block;
+}
+
+.cor-box.verde { background: var(--verde); }
+.cor-box.amarelo { background: var(--amarelo); }
+.cor-box.vermelho { background: var(--vermelho); }
+
+
+@keyframes tremer {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+.tremer {
+  animation: tremer 0.3s ease-in-out;
+}
+
+@media (max-width: 480px) {
+  .celula {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+  .teclado button {
+    height: 42px;
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 360px) {
+  .container-termo { padding: .6rem; }
+  .painel-jogo { padding: .75rem; }
+  .celula { width: 42px; height: 42px; }
+  .teclado { gap: .2rem; }
+  .teclado button { min-width: 0; padding-inline: .25rem; }
+}

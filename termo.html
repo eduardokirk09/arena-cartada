@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Termo – Arena Cartada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="termo.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="logo" href="trabalhog2.html">
+      <span class="logo-marca">♠</span> Arena Cartada
+    </a>
+    <nav class="menu">
+      <a href="trabalhog2.html">Voltar para o Início</a>
+    </nav>
+  </header>
+
+  <main class="container-termo">
+    
+    <section class="painel-jogo">
+      <div class="cabecalho-termo">
+        <h1>Termo</h1>
+        <button type="button" class="btn-novo" id="btn-novo">Nova Palavra</button>
+      </div>
+
+      <p class="aviso" id="mensagem-status">Digite uma palavra de 5 letras e aperte ENTER.</p>
+
+      
+      <div class="grade-termo" id="grade-termo"></div>
+
+      
+      <div class="teclado" id="teclado">
+        <div class="linha-teclado">
+          <button data-tecla="Q">Q</button><button data-tecla="W">W</button><button data-tecla="E">E</button><button data-tecla="R">R</button><button data-tecla="T">T</button><button data-tecla="Y">Y</button><button data-tecla="U">U</button><button data-tecla="I">I</button><button data-tecla="O">O</button><button data-tecla="P">P</button>
+        </div>
+        <div class="linha-teclado">
+          <button data-tecla="A">A</button><button data-tecla="S">S</button><button data-tecla="D">D</button><button data-tecla="F">F</button><button data-tecla="G">G</button><button data-tecla="H">H</button><button data-tecla="J">J</button><button data-tecla="K">K</button><button data-tecla="L">L</button><button data-tecla="BACKSPACE" class="tecla-larga">⌫</button>
+        </div>
+        <div class="linha-teclado">
+          <button data-tecla="Z">Z</button><button data-tecla="X">X</button><button data-tecla="C">C</button><button data-tecla="V">V</button><button data-tecla="B">B</button><button data-tecla="N">N</button><button data-tecla="M">M</button><button data-tecla="ENTER" class="tecla-enter">ENTER</button>
+        </div>
+      </div>
+
+      
+      <div class="legenda">
+        <span><i class="cor-box verde"></i> Letra e posição certas</span>
+        <span><i class="cor-box amarelo"></i> Letra certa, posição errada</span>
+        <span><i class="cor-box vermelho"></i> Letra não existe</span>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="termo.js"></script>
+</body>
+</html>

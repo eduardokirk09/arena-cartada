@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Digitação Rápida | Arena Cartada</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="drapida.css">
+    <script src="drapida.js" defer></script>
+</head>
+
+<body>
+    <header class="topo">
+        <a class="logo" href="trabalhog2.html">
+            <span class="logo-marca">♠</span>
+            Arena Cartada
+        </a>
+
+        <a class="voltar" href="trabalhog2.html#jogos">
+            Voltar aos jogos
+        </a>
+    </header>
+
+    <main>
+        <section class="abertura">
+            <div>
+                <p class="selo">Arena Cartada · Jogo de velocidade</p>
+
+                <h1>Digitação Rápida</h1>
+
+                <p>
+                    Prepare seus dedos! Digite a frase antes dos
+                    adversários e conquiste o primeiro lugar.
+                </p>
+
+                <a class="botao" href="#corrida">Começar a jogar</a>
+            </div>
+
+            <div class="arte-teclado" aria-hidden="true">
+                <div class="tecla">A</div>
+                <div class="tecla">S</div>
+                <div class="tecla">D</div>
+                <div class="tecla">F</div>
+                <div class="tecla tecla-especial">⚡</div>
+                <div class="tecla tecla-espaco">ESPAÇO</div>
+            </div>
+        </section>
+
+        <section class="area-corrida" id="corrida">
+            <div class="painel">
+
+                <div class="painel-topo">
+                    <div>
+                        <p class="etiqueta">DESAFIO DE VELOCIDADE</p>
+                        <h2>Corrida de Digitação</h2>
+                    </div>
+
+                    <div class="seletor">
+                        <label for="dificuldade">Dificuldade</label>
+
+                        <select id="dificuldade">
+                            <option value="facil">Fácil</option>
+                            <option value="medio">Médio</option>
+                            <option value="dificil">Difícil</option>
+                            <option value="expert">Expert</option>
+                        </select>
+                    </div>
+                </div>
+
+                <p class="descricao-modo" id="descricao-modo">
+                    Adversários mais lentos. Ideal para começar.
+                </p>
+
+                <div class="estatisticas">
+                    <div class="estatistica">
+                        <span>Tempo</span>
+                        <strong id="tempo">0.0s</strong>
+                    </div>
+
+                    <div class="estatistica">
+                        <span>Velocidade</span>
+                        <strong id="ppm">0 PPM</strong>
+                    </div>
+
+                    <div class="estatistica">
+                        <span>Precisão</span>
+                        <strong id="precisao">100%</strong>
+                    </div>
+
+                    <div class="estatistica">
+                        <span>Progresso</span>
+                        <strong id="progresso">0%</strong>
+                    </div>
+                </div>
+
+                <div class="pista">
+                    <div class="pista-titulo">
+                        <h3>Quem vai chegar primeiro?</h3>
+                        <span>LINHA DE CHEGADA 🏁</span>
+                    </div>
+
+                    <div class="corredor jogador">
+                        <div class="corredor-topo">
+                            <span>⌨️ Você</span>
+                            <span id="porcentagem-jogador">0%</span>
+                        </div>
+
+                        <div class="trilha">
+                            <div class="barra" id="barra-jogador"></div>
+                            <span class="corredor-icone" id="icone-jogador">🏎️</span>
+                        </div>
+                    </div>
+
+                    <div class="corredor">
+                        <div class="corredor-topo">
+                            <span>🤖 Turbo</span>
+                            <span id="porcentagem-bot1">0%</span>
+                        </div>
+
+                        <div class="trilha">
+                            <div class="barra barra-bot1" id="barra-bot1"></div>
+                            <span class="corredor-icone" id="icone-bot1">🚗</span>
+                        </div>
+                    </div>
+
+                    <div class="corredor">
+                        <div class="corredor-topo">
+                            <span>🤖 Flash</span>
+                            <span id="porcentagem-bot2">0%</span>
+                        </div>
+
+                        <div class="trilha">
+                            <div class="barra barra-bot2" id="barra-bot2"></div>
+                            <span class="corredor-icone" id="icone-bot2">🚙</span>
+                        </div>
+                    </div>
+
+                    <div class="corredor">
+                        <div class="corredor-topo">
+                            <span>🤖 Relâmpago</span>
+                            <span id="porcentagem-bot3">0%</span>
+                        </div>
+
+                        <div class="trilha">
+                            <div class="barra barra-bot3" id="barra-bot3"></div>
+                            <span class="corredor-icone" id="icone-bot3">🏎️</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="area-digitacao">
+                    <div class="texto-topo">
+                        <h3>Digite o texto abaixo</h3>
+                        <span id="contador-caracteres">0 / 0 caracteres</span>
+                    </div>
+
+                    <div class="texto-desafio" id="texto-desafio"></div>
+
+                    <label class="label-digitacao" for="campo-digitacao">
+                        Sua digitação
+                    </label>
+
+                    <textarea
+                        id="campo-digitacao"
+                        placeholder="Clique em Iniciar corrida para começar..."
+                        rows="4"
+                        disabled
+                        spellcheck="false"
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="off"
+                    ></textarea>
+
+                    <p class="dica">
+                        Digite exatamente como aparece, incluindo
+                        acentos, espaços e pontuação.
+                    </p>
+                </div>
+
+                <p class="mensagem" id="mensagem" aria-live="polite">
+                    Escolha uma dificuldade e prepare-se para correr!
+                </p>
+
+                <div class="controles">
+                    <button class="botao" id="btn-iniciar">
+                        Iniciar corrida
+                    </button>
+
+                    <button class="botao botao-claro" id="btn-reiniciar">
+                        Nova corrida
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="como">
+            <h2>Como jogar?</h2>
+
+            <div class="passos">
+                <article class="passo">
+                    <span class="passo-num">1</span>
+                    <h3>Escolha seu nível</h3>
+                    <p>
+                        Selecione Fácil, Médio, Difícil ou Expert.
+                        Quanto maior a dificuldade, mais rápidos
+                        serão seus adversários.
+                    </p>
+                </article>
+
+                <article class="passo">
+                    <span class="passo-num">2</span>
+                    <h3>Digite sem errar</h3>
+                    <p>
+                        Copie o texto mostrado na tela.
+                        As letras ficam verdes quando corretas
+                        e vermelhas quando incorretas.
+                    </p>
+                </article>
+
+                <article class="passo">
+                    <span class="passo-num">3</span>
+                    <h3>Chegue primeiro</h3>
+                    <p>
+                        Complete todo o texto antes dos três
+                        adversários para vencer a corrida.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        Arena Cartada · Projeto acadêmico
+    </footer>
+</body>
+</html>

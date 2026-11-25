@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack | Arena Cartada</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="blackjack.css">
+    <script src="blackjack.js" defer></script>
+</head>
+<body>
+
+    <header class="topo">
+        <a href="trabalhog2.html" class="logo">
+            <span class="logo-marca">♠</span>
+            Arena Cartada
+        </a>
+
+        <nav class="menu">
+            <button
+                class="botao-som"
+                id="btn-musica"
+                type="button"
+                aria-label="Ligar som"
+                aria-pressed="false"
+                title="Ligar som"
+            >
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 5 6 9H3v6h3l5 4V5Z"/>
+                    <path class="onda" d="M15.5 8.5a5 5 0 0 1 0 7"/>
+                    <path class="onda" d="M19 5a10 10 0 0 1 0 14"/>
+                    <path class="som-cortado" d="m16 9 5 6m0-6-5 6"/>
+                </svg>
+            </button>
+
+            <a href="trabalhog2.html#jogos" class="voltar">
+                Voltar aos jogos
+            </a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="abertura">
+            <div>
+                <p class="selo">Arena Cartada · Jogo de cartas</p>
+
+                <h1>Blackjack</h1>
+
+                <p class="abertura-sub">
+                    Chegue o mais perto possível de 21 sem ultrapassar.
+                    Será que você consegue vencer a banca?
+                </p>
+
+                <a href="#mesa" class="botao">Começar a jogar</a>
+            </div>
+
+            <div class="pilha" aria-hidden="true">
+                <div class="carta pilha-1">
+                    <span class="valor">A</span>
+                    <span class="naipe">♠</span>
+                </div>
+
+                <div class="carta carta-vermelha pilha-2">
+                    <span class="valor">K</span>
+                    <span class="naipe">♥</span>
+                </div>
+
+                <div class="ficha">21</div>
+            </div>
+        </section>
+
+        <section class="mesa" id="mesa">
+            <div class="mesa-conteudo">
+
+                <div class="mesa-topo">
+                    <h2>Mesa de Blackjack</h2>
+
+                    <div class="placar">
+                        <p>
+                            Fichas
+                            <strong id="fichas">100</strong>
+                        </p>
+
+                        <p>
+                            Aposta
+                            <strong id="aposta">10</strong>
+                        </p>
+
+                        <p>
+                            Recorde
+                            <strong id="recorde">100</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="maos">
+
+                    <div class="mao">
+                        <h3>
+                            Banca
+                            <span class="pontos" id="pontos-banca">0</span>
+                        </h3>
+
+                        <div class="cartas" id="cartas-banca"></div>
+                    </div>
+
+                    <div class="mao">
+                        <h3>
+                            Você
+                            <span class="pontos" id="pontos-jogador">0</span>
+                        </h3>
+
+                        <div class="cartas" id="cartas-jogador"></div>
+                    </div>
+
+                </div>
+
+                <p class="mensagem" id="mensagem" aria-live="polite">
+                    Clique em Nova rodada para começar!
+                </p>
+
+                <div class="controles">
+                    <button class="botao" id="btn-pedir" disabled>
+                        Pedir carta
+                    </button>
+
+                    <button class="botao botao-claro" id="btn-parar" disabled>
+                        Parar
+                    </button>
+
+                    <button class="botao botao-claro" id="btn-novo">
+                        Nova rodada
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="como">
+            <h2>Como jogar Blackjack?</h2>
+
+            <div class="passos">
+
+                <div>
+                    <span class="passo-num">1</span>
+                    <h3>Comece a rodada</h3>
+                    <p>
+                        Você começa com 100 fichas e aposta
+                        10 fichas por rodada.
+                    </p>
+                </div>
+
+                <div>
+                    <span class="passo-num">2</span>
+                    <h3>Peça ou pare</h3>
+                    <p>
+                        Peça cartas para chegar perto de 21.
+                        Se achar que sua pontuação está boa,
+                        clique em Parar.
+                    </p>
+                </div>
+
+                <div>
+                    <span class="passo-num">3</span>
+                    <h3>Vença a banca</h3>
+                    <p>
+                        Ganhe ficando mais perto de 21 que a banca,
+                        sem ultrapassar esse valor.
+                    </p>
+                </div>
+
+            </div>
+
+            <p style="margin-top: 2rem;">
+                <strong>Regras:</strong>
+                O Ás vale 1 ou 11. J, Q e K valem 10.
+                A banca compra cartas até atingir pelo menos 17 pontos.
+                Uma vitória devolve o dobro da aposta e um empate
+                devolve o valor apostado.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        Arena Cartada · Projeto acadêmico
+    </footer>
+
+</body>
+</html>
+

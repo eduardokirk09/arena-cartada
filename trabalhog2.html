@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arena Cartada – 5 jogos direto no navegador</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="trabalhog2.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="logo" href="trabalhog2.html" aria-label="Arena Cartada, página inicial"><span class="logo-marca" aria-hidden="true">♠</span> Arena Cartada</a>
+    <nav class="menu" aria-label="Menu principal">
+      <a href="#jogos">Jogos</a>
+      <a href="#como">Como funciona</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+  </header>
+
+  <main>
+    
+    <section class="abertura" id="inicio">
+      <div class="abertura-texto">
+        <p class="selo">5 jogos · grátis · sem cadastro</p>
+        <h1>Cartas, bola, teclado e palavras. Escolha sua arena.</h1>
+        <p class="abertura-sub">Jogue Blackjack, Vença o Baralho, Haxball, Digitação Rápida e Termo direto no navegador, no celular ou no computador.</p>
+        <div class="abertura-acoes">
+          <a class="botao" href="#jogos">Ver os jogos</a>
+          <a class="botao botao-claro" href="#como">Como funciona</a>
+        </div>
+      </div>
+
+      <div class="pilha" aria-hidden="true">
+        <div class="carta pilha-1"><span class="valor">A</span><span class="naipe">♠</span></div>
+        <div class="carta carta-vermelha pilha-2"><span class="valor">K</span><span class="naipe">♥</span></div>
+        <div class="ficha pilha-ficha">21</div>
+        <div class="bola pilha-bola"></div>
+      </div>
+    </section>
+
+    
+    <section class="faixa" aria-label="Resumo">
+      <p><strong>5</strong> jogos</p>
+      <p><strong>1–2</strong> jogadores</p>
+      <p><strong>0</strong> downloads</p>
+      <p><strong>100%</strong> responsivo</p>
+    </section>
+
+    
+    <section class="jogos" id="jogos">
+      <div class="titulo-secao">
+        <h2>Escolha seu jogo</h2>
+        <p>Cada partida abre na hora. Dá para jogar uma rodada rápida ou ficar horas.</p>
+      </div>
+
+      <div class="grade-jogos">
+
+        <article class="jogo jogo-grande tema-verde">
+          <div class="arte arte-blackjack" aria-hidden="true">
+            <div class="carta mini"><span class="valor">A</span><span class="naipe">♠</span></div>
+            <div class="carta mini carta-vermelha"><span class="valor">K</span><span class="naipe">♥</span></div>
+            <span class="arte-pontos">21</span>
+          </div>
+          <div class="jogo-corpo">
+            <h3>Blackjack</h3>
+            <p>Chegue o mais perto de 21 pontos sem estourar e vença a banca. Peça carta, pare ou aposte suas fichas.</p>
+            <ul class="etiquetas">
+              <li>Cartas</li><li>1 jogador</li><li>5 min</li>
+            </ul>
+            <a class="botao" href="blackjack.html">Jogar Blackjack</a>
+          </div>
+        </article>
+
+        <article class="jogo jogo-grande tema-vermelho">
+          <div class="arte arte-baralho" aria-hidden="true">
+            <span class="seta">▲</span>
+            <div class="carta mini verso"></div>
+            <span class="seta">▼</span>
+          </div>
+          <div class="jogo-corpo">
+            <h3>Vença o Baralho</h3>
+            <p>A próxima carta será maior ou menor? Acerte em sequência para somar pontos antes que o baralho acabe.</p>
+            <ul class="etiquetas">
+              <li>Cartas</li><li>1 jogador</li><li>3 min</li>
+            </ul>
+            <a class="botao" href="vençaobaralho.html">Jogar Vença o Baralho</a>
+          </div>
+        </article>
+
+        <article class="jogo tema-azul">
+          <div class="arte arte-haxball" aria-hidden="true">
+            <span class="disco disco-a"></span>
+            <span class="bola-campo"></span>
+            <span class="disco disco-b"></span>
+          </div>
+          <div class="jogo-corpo">
+            <h3>Haxball</h3>
+            <p>Futebol 2D de discos, um contra um no mesmo teclado. Chute, dispute a bola e marque mais gols que o adversário.</p>
+            <ul class="etiquetas">
+              <li>Esporte</li><li>2 jogadores</li><li>3 min</li>
+            </ul>
+            <a class="botao" href="haxball.html">Jogar Haxball</a>
+          </div>
+        </article>
+
+        <article class="jogo tema-roxo">
+          <div class="arte arte-digitacao" aria-hidden="true">
+            <span class="texto-digitado">rápido<span class="cursor"></span></span>
+            <span class="ppm">62 PPM</span>
+          </div>
+          <div class="jogo-corpo">
+            <h3>Digitação Rápida</h3>
+            <p>Digite as palavras que aparecem na tela o mais rápido que conseguir. Veja sua velocidade e precisão.</p>
+            <ul class="etiquetas">
+              <li>Teclado</li><li>1 jogador</li><li>1 min</li>
+            </ul>
+            <a class="botao" href="drapida.html">Jogar Digitação</a>
+          </div>
+        </article>
+
+        <article class="jogo tema-dourado">
+          <div class="arte arte-termo" aria-hidden="true">
+            <span class="letra certa">T</span>
+            <span class="letra lugar">E</span>
+            <span class="letra">R</span>
+            <span class="letra certa">M</span>
+            <span class="letra">O</span>
+          </div>
+          <div class="jogo-corpo">
+            <h3>Termo</h3>
+            <p>Descubra a palavra de 5 letras em até 6 tentativas. As cores mostram quais letras você acertou.</p>
+            <ul class="etiquetas">
+              <li>Palavras</li><li>1 jogador</li><li>4 min</li>
+            </ul>
+            <a class="botao" href="termo.html">Jogar Termo</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    
+    <section class="como" id="como">
+      <h2>Como funciona</h2>
+      <ol class="passos">
+        <li>
+          <span class="passo-num">1</span>
+          <h3>Escolha</h3>
+          <p>Veja a lista e toque no jogo que combina com seu humor.</p>
+        </li>
+        <li>
+          <span class="passo-num">2</span>
+          <h3>Jogue</h3>
+          <p>A partida começa na hora, sem cadastro e sem instalar nada.</p>
+        </li>
+        <li>
+          <span class="passo-num">3</span>
+          <h3>Melhore</h3>
+          <p>Repita a rodada para bater seu recorde de fichas, gols, PPM ou tentativas.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="mesa-resumo" id="mesa" aria-labelledby="resumo-titulo">
+      <div class="titulo-secao">
+        <p class="selo-resumo">GUIA RÁPIDO</p>
+        <h2 id="resumo-titulo">Encontre sua próxima partida</h2>
+        <p>Um panorama das arenas para escolher de acordo com o tempo e a companhia.</p>
+      </div>
+      <div class="tabela-wrap">
+        <table class="tabela-jogos">
+          <thead><tr><th scope="col">Jogo</th><th scope="col">Estilo</th><th scope="col">Jogadores</th><th scope="col">Partida média</th><th scope="col">Ação</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Blackjack</th><td>Cartas e estratégia</td><td>1</td><td>5 min</td><td><a href="blackjack.html">Abrir jogo ↗</a></td></tr>
+            <tr><th scope="row">Vença o Baralho</th><td>Cartas e previsão</td><td>1</td><td>3 min</td><td><a href="vençaobaralho.html">Abrir jogo ↗</a></td></tr>
+            <tr><th scope="row">Haxball</th><td>Futebol de mesa</td><td>2</td><td>3 min</td><td><a href="haxball.html">Abrir jogo ↗</a></td></tr>
+            <tr><th scope="row">Digitação Rápida</th><td>Velocidade</td><td>1</td><td>1 min</td><td><a href="drapida.html">Abrir jogo ↗</a></td></tr>
+            <tr><th scope="row">Termo</th><td>Palavras</td><td>1</td><td>4 min</td><td><a href="termo.html">Abrir jogo ↗</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    
+    <section class="sobre" id="sobre">
+      <div class="sobre-intro">
+        <p class="selo-resumo">POR TRÁS DA ARENA</p>
+        <h2>Sobre o projeto</h2>
+        <p>Arena Cartada é um projeto de minigames feito para reunir desafios rápidos em um só lugar. Criamos jogos de cartas, futebol, digitação e palavras que abrem direto no navegador, sem cadastro ou instalação.</p>
+        <p>Da estratégia do Blackjack ao palpite da próxima carta, cada jogo tem seu próprio ritmo e todos funcionam tanto para uma pausa curta quanto para uma disputa entre amigos.</p>
+      </div>
+      <div class="equipe">
+        <article class="pessoa"><span class="foto-pessoa"><img class="foto-eduardo" src="assets/eduardo-kirk.jpeg" alt="Eduardo Kirk" loading="lazy"></span><div><h3>Eduardo Kirk</h3><p>Desenvolvedor</p></div></article>
+        <article class="pessoa"><span class="foto-pessoa"><img class="foto-lucas" src="assets/lucas-brasil.jpeg" alt="Lucas Brasil" loading="lazy"></span><div><h3>Lucas Brasil</h3><p>Desenvolvedor</p></div></article>
+        <article class="pessoa"><span class="foto-pessoa"><img class="foto-davi" src="assets/davi-de-luna.jpeg" alt="Davi de Luna" loading="lazy"></span><div><h3>Davi de Luna</h3><p>Desenvolvedor</p></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Arena Cartada · Projeto acadêmico</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vença o Baralho – Arena Cartada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vençaobaralho.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="logo" href="trabalhog2.html">
+      <span class="logo-marca">♠</span> Arena Cartada
+    </a>
+    <nav class="menu">
+      <a href="trabalhog2.html">Voltar para o Início</a>
+    </nav>
+  </header>
+
+  <main class="container-principal">
+    
+    
+    <section class="painel-nove-cartas">
+      <div class="cabecalho-mesa">
+        <h1>Escolha uma das 9 cartas</h1>
+        <div class="placar-vidas">
+          Vidas (Cartas Vivas): <strong id="num-vidas">9</strong> / 9
+        </div>
+      </div>
+
+      
+      <div class="grade-3x3" id="grade-mesa"></div>
+    </section>
+
+    
+    <aside class="painel-lateral">
+      
+      <div class="caixa-baralho">
+        <div class="coluna-monte">
+          <span>Bolo Restante (<strong id="num-restantes">35</strong>)</span>
+          <div class="carta carta-fechada" id="bolo-monte">
+            <span>BARALHO</span>
+          </div>
+        </div>
+
+        <div class="coluna-monte">
+          <span>Carta Sorteada</span>
+          <div id="espaco-sorteada">
+            <div class="carta carta-vazia">?</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="caixa-jogada">
+        <p id="texto-status">1. Clique em uma das 9 cartas da esquerda.</p>
+        
+        <div class="botoes-decisao">
+          <button type="button" class="btn btn-maior" id="btn-maior" disabled>▲ MAIOR</button>
+          <button type="button" class="btn btn-menor" id="btn-menor" disabled>▼ MENOR</button>
+        </div>
+
+        <button type="button" class="btn btn-reiniciar" id="btn-reiniciar">Reiniciar Jogo</button>
+      </div>
+
+      <div class="regras-rapidas">
+        <p><strong>Ordem das cartas ( da menor para a maior ):</strong></p>
+        <p>A (1) · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · J (11) · Q (12) · K (13)</p>
+        <p class="aviso-empate">* Empate você perde a carta!</p>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <script src="vençaobaralho.js"></script>
+</body>
+</html>

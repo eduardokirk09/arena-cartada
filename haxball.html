@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Haxball – Arena Cartada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="trabalhog2.css">
+  <link rel="stylesheet" href="haxball.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="logo" href="trabalhog2.html"><span class="logo-marca" aria-hidden="true">♠</span> Arena Cartada</a>
+    <nav class="menu" aria-label="Menu principal">
+      <a href="trabalhog2.html#jogos">Jogos</a>
+      <a href="trabalhog2.html">Início</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="fut" id="haxball">
+      <div class="fut-conteudo">
+
+        <div class="fut-topo">
+          <h2>Haxball</h2>
+          <a class="botao botao-claro" href="trabalhog2.html#jogos">← Voltar aos jogos</a>
+        </div>
+
+        
+        <div class="fut-placar" aria-label="Placar">
+          <div class="fut-time fut-vermelho">
+            <span class="fut-nome">Jogador 1</span>
+            <output class="fut-gols" id="fut-gols-vermelho" aria-live="polite">0</output>
+          </div>
+          <div class="fut-centro">
+            <output class="fut-relogio" id="fut-relogio">0:00</output>
+            <span class="fut-regra" id="fut-regra">3 gols ou 3 min</span>
+          </div>
+          <div class="fut-time fut-azul">
+            <output class="fut-gols" id="fut-gols-azul" aria-live="polite">0</output>
+            <span class="fut-nome">Jogador 2</span>
+          </div>
+        </div>
+
+        
+        <div class="fut-palco">
+          <canvas id="fut-campo" aria-label="Campo de Haxball. O Jogador 1 (vermelho) ataca o gol da direita e o Jogador 2 (azul) ataca o gol da esquerda."></canvas>
+
+          
+          <div class="fut-tela" id="fut-tela">
+            <div class="fut-tela-card">
+              <h3 id="fut-tela-titulo">Pronto para o apito?</h3>
+              <p id="fut-tela-texto">Campo clássico, bola pesada e um chute de cada vez.</p>
+              <button class="botao" id="fut-btn-tela" type="button">Começar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="controles">
+          <button class="botao" id="fut-btn-jogar" type="button">Começar</button>
+          <button class="botao botao-claro" id="fut-btn-reiniciar" type="button">Reiniciar</button>
+          <button class="botao botao-claro" id="fut-btn-som" type="button">Som: ligado</button>
+        </div>
+
+        
+        <div class="fut-teclas">
+          <div class="fut-jogador fut-vermelho">
+            <h3>Jogador 1 · vermelho</h3>
+            <p><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> mover · <kbd>Espaço</kbd> chutar</p>
+          </div>
+          <div class="fut-jogador fut-azul">
+            <h3>Jogador 2 · azul</h3>
+            <p><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd> mover · <kbd>Shift</kbd> chutar (esquerdo ou direito)</p>
+          </div>
+        </div>
+        <p class="fut-dica">Segure a tecla de chute e encoste na bola. Depois de um chute, solte a tecla para chutar de novo. P pausa, R reinicia, M liga e desliga o som. Este jogo precisa de teclado.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Arena Cartada · Projeto acadêmico</p>
+  </footer>
+
+  
+  <script src="haxball.js"></script>
+</body>
+</html>

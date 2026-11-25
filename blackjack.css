@@ -1,0 +1,658 @@
+
+
+
+
+:root {
+    --noite: #14121f;
+    --noite-2: #1f1b2e;
+    --papel: #f4efe6;
+    --marfim: #fffaf0;
+    --tinta: #1a1822;
+    --coral: #ff5a45;
+    --lima: #c6f432;
+    --violeta: #6c4cff;
+    --azul: #2f7bff;
+    --verde: #1f8a5b;
+    --dourado: #f2b534;
+
+    --fonte-titulo: "Bricolage Grotesque", "Segoe UI", sans-serif;
+    --fonte-texto: "Work Sans", "Segoe UI", sans-serif;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--tinta);
+    background: var(--papel);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--fonte-titulo);
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: var(--fonte-texto);
+}
+
+:focus-visible {
+    outline: 3px solid var(--lima);
+    outline-offset: 3px;
+}
+
+
+
+.topo {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 0.9rem clamp(1rem, 5vw, 4rem);
+
+    background: var(--noite);
+    color: var(--marfim);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-family: var(--fonte-titulo);
+    font-weight: 800;
+    font-size: 1.35rem;
+}
+
+.logo-marca {
+    display: grid;
+    place-items: center;
+
+    width: 2rem;
+    height: 2rem;
+
+    border-radius: 8px;
+    background: var(--lima);
+    color: var(--noite);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.voltar {
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.voltar:hover {
+    color: var(--lima);
+}
+
+
+.botao-som {
+    display: grid;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    border: 2px solid var(--lima);
+    border-radius: 10px;
+
+    background: transparent;
+    color: var(--lima);
+
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.botao-som:hover {
+    background: var(--noite-2);
+    transform: translateY(-2px);
+}
+
+.botao-som svg {
+    width: 22px;
+    height: 22px;
+}
+
+.botao-som .onda {
+    display: none;
+}
+
+.botao-som.ligado .onda {
+    display: block;
+}
+
+.botao-som.ligado .som-cortado {
+    display: none;
+}
+
+
+
+.botao {
+    display: inline-block;
+
+    padding: 0.75rem 1.4rem;
+
+    border: 2px solid var(--lima);
+    border-radius: 12px;
+
+    background: var(--lima);
+    color: var(--noite);
+
+    font: 600 1rem var(--fonte-texto);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s,
+        background 0.15s,
+        color 0.15s,
+        border-color 0.15s;
+}
+
+.botao:hover:not(:disabled) {
+    transform: translateY(-2px);
+    background: var(--marfim);
+    border-color: var(--marfim);
+}
+
+.botao-claro {
+    background: transparent;
+    color: var(--marfim);
+    border-color: var(--marfim);
+}
+
+.botao-claro:hover:not(:disabled) {
+    background: var(--marfim);
+    color: var(--noite);
+}
+
+.botao:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+
+
+.abertura {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 2rem;
+
+    padding:
+        clamp(2.5rem, 7vw, 6rem)
+        clamp(1rem, 5vw, 4rem);
+
+    background: var(--noite);
+    color: var(--marfim);
+
+    overflow: hidden;
+}
+
+.selo {
+    display: inline-block;
+
+    margin-bottom: 1.2rem;
+    padding: 0.3rem 0.9rem;
+
+    border: 1px solid var(--lima);
+    border-radius: 999px;
+
+    color: var(--lima);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.abertura h1 {
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    font-weight: 800;
+
+    margin-bottom: 1.2rem;
+}
+
+.abertura-sub {
+    max-width: 46ch;
+    margin-bottom: 1.8rem;
+    opacity: 0.85;
+}
+
+
+.pilha {
+    position: relative;
+    height: 250px;
+}
+
+.pilha .carta {
+    position: absolute;
+    width: 150px;
+    height: 210px;
+}
+
+.pilha-1 {
+    left: 12%;
+    bottom: 10px;
+    transform: rotate(-12deg);
+}
+
+.pilha-2 {
+    left: 38%;
+    bottom: 30px;
+    transform: rotate(10deg);
+}
+
+.ficha {
+    position: absolute;
+    right: 8%;
+    bottom: 5px;
+
+    display: grid;
+    place-items: center;
+
+    width: 84px;
+    height: 84px;
+
+    border-radius: 50%;
+    border: 6px dashed var(--marfim);
+
+    background: var(--coral);
+    color: var(--marfim);
+
+    font: 800 1.5rem var(--fonte-titulo);
+}
+
+
+
+.mesa {
+    padding:
+        clamp(2.5rem, 6vw, 5rem)
+        clamp(1rem, 5vw, 4rem);
+
+    background: var(--verde);
+    color: var(--marfim);
+}
+
+.mesa-conteudo {
+    max-width: 950px;
+    margin: 0 auto;
+
+    padding: clamp(1.2rem, 4vw, 2.5rem);
+
+    border: 3px solid var(--lima);
+    border-radius: 24px;
+
+    background: var(--noite);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+.mesa-topo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+
+    gap: 0.8rem 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.mesa-topo h2 {
+    margin-bottom: 0;
+    color: var(--marfim);
+}
+
+.placar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 0.7rem 1.5rem;
+}
+
+.placar p {
+    white-space: nowrap;
+    color: var(--marfim);
+    font-size: 0.95rem;
+}
+
+.placar strong {
+    margin-left: 0.2rem;
+
+    color: var(--lima);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+#recorde {
+    color: var(--lima);
+}
+
+
+.maos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.mao h3 {
+    color: var(--marfim);
+}
+
+.pontos {
+    display: inline-block;
+
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.6rem;
+
+    border-radius: 999px;
+
+    background: var(--lima);
+    color: var(--tinta);
+
+    font-family: var(--fonte-texto);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+
+.cartas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+
+    margin-top: 0.8rem;
+    min-height: 155px;
+}
+
+.carta {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 110px;
+    height: 154px;
+
+    border: 1px solid #d8cfb8;
+    border-radius: 10px;
+
+    background: var(--marfim);
+    color: var(--tinta);
+
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.33);
+
+    font-family: var(--fonte-titulo);
+    flex-shrink: 0;
+}
+
+.carta .valor {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.carta .naipe {
+    font-size: 2.6rem;
+    line-height: 1.2;
+}
+
+
+.carta-vermelha {
+    color: var(--coral);
+}
+
+
+.carta.verso {
+    background: repeating-linear-gradient(
+        45deg,
+        var(--violeta) 0 8px,
+        #4a30c9 8px 16px
+    );
+
+    border: 6px solid var(--marfim);
+}
+
+
+
+.mensagem {
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+
+    border-left: 4px solid var(--lima);
+    border-radius: 8px;
+
+    background: var(--noite-2);
+    color: var(--marfim);
+
+    font-weight: 500;
+}
+
+.controles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+
+
+.como {
+    padding:
+        clamp(2.5rem, 6vw, 5rem)
+        clamp(1rem, 5vw, 4rem);
+
+    background: var(--marfim);
+    color: var(--tinta);
+}
+
+.como h2 {
+    margin-bottom: 1.5rem;
+}
+
+.passos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.passos > div {
+    padding: 1.5rem;
+
+    border: 1px solid #e5ddcd;
+    border-radius: 16px;
+
+    background: var(--papel);
+}
+
+.passo-num {
+    display: grid;
+    place-items: center;
+
+    width: 2.8rem;
+    height: 2.8rem;
+
+    margin-bottom: 0.8rem;
+
+    border-radius: 50%;
+
+    background: var(--violeta);
+    color: var(--marfim);
+
+    font: 800 1.3rem var(--fonte-titulo);
+}
+
+.passos h3 {
+    margin-bottom: 0.6rem;
+}
+
+
+
+.rodape {
+    padding: 1.5rem;
+
+    text-align: center;
+
+    background: var(--noite);
+    color: var(--marfim);
+
+    font-size: 0.9rem;
+}
+
+
+
+@media (max-width: 960px) {
+    .abertura {
+        grid-template-columns: 1fr 0.8fr;
+    }
+
+    .mesa-topo {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 720px) {
+    .topo {
+        padding: 0.9rem 1rem;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .menu {
+        gap: 0.7rem;
+    }
+
+    .voltar {
+        font-size: 0.8rem;
+    }
+
+    .botao-som {
+        width: 38px;
+        height: 38px;
+    }
+
+    .abertura {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .pilha {
+        height: 200px;
+    }
+
+    .pilha .carta {
+        width: 120px;
+        height: 168px;
+    }
+
+    .maos,
+    .passos {
+        grid-template-columns: 1fr;
+    }
+
+    .cartas {
+        min-height: 130px;
+    }
+
+    .carta {
+        width: 90px;
+        height: 126px;
+    }
+
+    .carta .valor {
+        font-size: 2rem;
+    }
+
+    .carta .naipe {
+        font-size: 2.2rem;
+    }
+
+    .placar {
+        gap: 0.5rem 1rem;
+    }
+
+    .mesa-conteudo {
+        border-radius: 18px;
+    }
+
+    .controles .botao {
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo {
+        font-size: 0.9rem;
+    }
+
+    .logo-marca {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .voltar {
+        font-size: 0.75rem;
+    }
+
+    .placar {
+        gap: 0.4rem 0.8rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .botao,
+    .botao-som {
+        transition: none;
+    }
+}

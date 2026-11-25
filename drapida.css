@@ -1,0 +1,598 @@
+
+:root {
+    --noite: #14121f;
+    --noite-2: #1f1b2e;
+    --papel: #f4efe6;
+    --marfim: #fffaf0;
+    --tinta: #1a1822;
+    --coral: #ff5a45;
+    --lima: #c6f432;
+    --violeta: #6c4cff;
+    --azul: #2f7bff;
+    --verde: #1f8a5b;
+
+    --fonte-titulo: "Bricolage Grotesque", "Segoe UI", sans-serif;
+    --fonte-texto: "Work Sans", "Segoe UI", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--tinta);
+    background: var(--papel);
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-titulo);
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, select, textarea {
+    font-family: var(--fonte-texto);
+}
+
+:focus-visible {
+    outline: 3px solid var(--lima);
+    outline-offset: 3px;
+}
+
+
+
+.topo {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem clamp(1rem, 5vw, 4rem);
+    background: var(--noite);
+    color: var(--marfim);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--fonte-titulo);
+    font-weight: 800;
+    font-size: 1.35rem;
+}
+
+.logo-marca {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 8px;
+    background: var(--lima);
+    color: var(--noite);
+}
+
+.voltar {
+    font-weight: 600;
+}
+
+.voltar:hover {
+    color: var(--lima);
+}
+
+
+
+.botao {
+    display: inline-block;
+    padding: 0.75rem 1.4rem;
+    border: 2px solid var(--lima);
+    border-radius: 12px;
+    background: var(--lima);
+    color: var(--noite);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.15s;
+}
+
+.botao:hover:not(:disabled) {
+    transform: translateY(-2px);
+    background: var(--marfim);
+    border-color: var(--marfim);
+}
+
+.botao-claro {
+    background: transparent;
+    color: var(--marfim);
+    border-color: var(--marfim);
+}
+
+.botao-claro:hover:not(:disabled) {
+    color: var(--noite);
+}
+
+.botao:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+
+
+.abertura {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 2rem;
+    padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 5vw, 4rem);
+    background: var(--noite);
+    color: var(--marfim);
+    overflow: hidden;
+}
+
+.selo {
+    display: inline-block;
+    margin-bottom: 1.2rem;
+    padding: 0.3rem 0.9rem;
+    border: 1px solid var(--lima);
+    border-radius: 999px;
+    color: var(--lima);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.abertura h1 {
+    font-size: clamp(2.7rem, 6vw, 4.5rem);
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+}
+
+.abertura p:not(.selo) {
+    max-width: 48ch;
+    margin-bottom: 1.8rem;
+    opacity: 0.85;
+}
+
+
+
+.arte-teclado {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.6rem;
+    max-width: 430px;
+    transform: rotate(-6deg);
+}
+
+.tecla {
+    display: grid;
+    place-items: center;
+    min-height: 65px;
+    border: 2px solid var(--marfim);
+    border-radius: 12px;
+    background: var(--noite-2);
+    box-shadow: 0 7px 0 #0c0b12;
+    font: 800 1.8rem var(--fonte-titulo);
+}
+
+.tecla-especial {
+    background: var(--lima);
+    color: var(--noite);
+}
+
+.tecla-espaco {
+    grid-column: 1 / -1;
+    min-height: 55px;
+    color: var(--lima);
+    font-size: 1rem;
+    letter-spacing: 0.25rem;
+}
+
+
+
+.area-corrida {
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 5vw, 4rem);
+    background: var(--verde);
+}
+
+.painel {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: clamp(1.2rem, 4vw, 2.5rem);
+    border: 3px solid var(--lima);
+    border-radius: 24px;
+    background: var(--noite);
+    color: var(--marfim);
+}
+
+.painel-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.etiqueta {
+    margin-bottom: 0.5rem;
+    color: var(--lima);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+}
+
+.seletor {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.seletor label {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.seletor select {
+    min-width: 160px;
+    padding: 0.7rem;
+    border: 2px solid var(--lima);
+    border-radius: 10px;
+    background: var(--noite-2);
+    color: var(--marfim);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.descricao-modo {
+    margin: 1rem 0 1.5rem;
+    color: #c5bfd4;
+    font-size: 0.95rem;
+}
+
+
+
+.estatisticas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.estatistica {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid #3b354e;
+    border-radius: 12px;
+    background: var(--noite-2);
+}
+
+.estatistica span {
+    color: #c5bfd4;
+    font-size: 0.85rem;
+}
+
+.estatistica strong {
+    color: var(--lima);
+    font: 800 1.6rem var(--fonte-titulo);
+}
+
+
+
+.pista {
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: var(--noite-2);
+}
+
+.pista-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.pista-titulo span {
+    color: var(--lima);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.corredor {
+    margin-bottom: 1.5rem;
+}
+
+.corredor:last-child {
+    margin-bottom: 0;
+}
+
+.corredor-topo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.jogador .corredor-topo {
+    color: var(--lima);
+}
+
+.trilha {
+    position: relative;
+    height: 24px;
+    margin-right: 25px;
+    border-radius: 999px;
+    background: #383247;
+    border-right: 4px dashed var(--marfim);
+}
+
+.barra {
+    width: 0;
+    height: 100%;
+    border-radius: 999px;
+    background: var(--lima);
+    transition: width 0.12s linear;
+}
+
+.barra-bot1 {
+    background: var(--coral);
+}
+
+.barra-bot2 {
+    background: var(--azul);
+}
+
+.barra-bot3 {
+    background: var(--violeta);
+}
+
+.corredor-icone {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    font-size: 1.6rem;
+    transition: left 0.12s linear;
+}
+
+
+
+.area-digitacao {
+    margin-top: 2rem;
+}
+
+.texto-topo {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.texto-topo span {
+    color: #c5bfd4;
+    font-size: 0.85rem;
+}
+
+.texto-desafio {
+    min-height: 150px;
+    padding: 1.5rem;
+    border: 2px solid #3b354e;
+    border-radius: 14px;
+    background: var(--noite-2);
+    color: #d5d0df;
+    font-size: 1.15rem;
+    line-height: 2;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.texto-desafio .correto {
+    color: var(--lima);
+    background: rgba(198, 244, 50, 0.08);
+}
+
+.texto-desafio .errado {
+    color: #fff;
+    background: #a72b3b;
+    border-radius: 2px;
+}
+
+.texto-desafio .atual {
+    border-bottom: 3px solid var(--lima);
+}
+
+.label-digitacao {
+    display: block;
+    margin: 1.5rem 0 0.5rem;
+    font-weight: 600;
+}
+
+#campo-digitacao {
+    width: 100%;
+    min-height: 125px;
+    padding: 1rem;
+    border: 2px solid #625a75;
+    border-radius: 12px;
+    outline: none;
+    background: var(--marfim);
+    color: var(--tinta);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    resize: vertical;
+}
+
+#campo-digitacao:focus {
+    border-color: var(--lima);
+    box-shadow: 0 0 0 3px rgba(198, 244, 50, 0.2);
+}
+
+#campo-digitacao:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.dica {
+    margin-top: 0.5rem;
+    color: #c5bfd4;
+    font-size: 0.85rem;
+}
+
+
+
+.mensagem {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-left: 4px solid var(--lima);
+    border-radius: 8px;
+    background: var(--noite-2);
+    font-weight: 600;
+}
+
+.mensagem.vitoria {
+    border-left-color: var(--lima);
+    color: var(--lima);
+}
+
+.mensagem.derrota {
+    border-left-color: var(--coral);
+    color: #ff9c90;
+}
+
+.controles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+
+
+.como {
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 5vw, 4rem);
+    background: var(--marfim);
+}
+
+.passos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.passo {
+    padding: 1.5rem;
+    border: 1px solid #e5ddcd;
+    border-radius: 16px;
+    background: var(--papel);
+}
+
+.passo-num {
+    display: grid;
+    place-items: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-bottom: 0.8rem;
+    border-radius: 50%;
+    background: var(--violeta);
+    color: var(--marfim);
+    font: 800 1.3rem var(--fonte-titulo);
+}
+
+.passo h3 {
+    margin-bottom: 0.7rem;
+}
+
+.rodape {
+    padding: 1.5rem;
+    text-align: center;
+    background: var(--noite);
+    color: var(--marfim);
+    font-size: 0.9rem;
+}
+
+
+
+@media (max-width: 850px) {
+    .abertura {
+        grid-template-columns: 1fr;
+    }
+
+    .arte-teclado {
+        max-width: 350px;
+    }
+
+    .estatisticas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .logo {
+        font-size: 1rem;
+    }
+
+    .voltar {
+        font-size: 0.8rem;
+    }
+
+    .painel {
+        padding: 1rem;
+    }
+
+    .pista {
+        padding: 1rem;
+    }
+
+    .texto-desafio {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .passos {
+        grid-template-columns: 1fr;
+    }
+
+    .estatistica strong {
+        font-size: 1.3rem;
+    }
+
+    .controles .botao {
+        font-size: 0.9rem;
+        padding: 0.7rem 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .barra,
+    .corredor-icone,
+    .botao {
+        transition: none;
+    }
+}
